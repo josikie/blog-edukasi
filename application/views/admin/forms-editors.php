@@ -27,7 +27,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Post</h5>
-              <button type="button" class="btn btn-warning">
+              <button type="button" class="btn btn-success">
                 <i class="bi bi-plus-lg"></i>
                 Tambah Post</button>
               <!-- Table with stripped rows -->
@@ -47,7 +47,10 @@
                     <td>9958</td>
                     <td>Curicó</td>
                     <td>2005/02/11</td>
-                    <td><button type="button" class="btn btn-danger"><button type="button" class="btn btn-success"></td>
+                    <td>
+                      <button type="button" class="btn btn-danger">Hapus</button>
+                      <button type="button" class="btn btn-warning">Edit</button>
+                    </td>
                   </tr>
                   <tr>
                     <td>Theodore Duran</td>
