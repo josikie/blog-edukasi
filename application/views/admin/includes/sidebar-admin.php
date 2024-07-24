@@ -3,7 +3,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="index.html">
+      <a class="nav-link " href="dashboard">
         <i class="bi bi-grid"></i>
         <span>Dashboard</span>
       </a>
@@ -15,7 +15,7 @@
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="components-alerts.html">
+          <a href="addpost">
             <i class="bi bi-plus-square"></i><span>Add Post</span>
           </a>
         </li>
