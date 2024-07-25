@@ -27,7 +27,8 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Post</h5>
-              <button type="button" class="btn btn-success">
+              <?php $this->load->view('admin/includes/modal'); ?>
+              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#largeModal">
                 <i class="bi bi-plus-lg"></i>
                 Tambah Post</button>
               <!-- Table with stripped rows -->
@@ -140,10 +141,8 @@
       </div>
     </section>
 
-  </main><!-- End #main -->
+  </main>
   <!-- End #main -->
-
-
   <!-- ======= Footer ======= -->
   <?php $this->load->view('admin/includes/footer-admin'); ?>
   <!-- End Footer -->
