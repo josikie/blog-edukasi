@@ -15,13 +15,13 @@
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="addpost">
-            <i class="bi bi-plus-square"></i><span>Add Post</span>
+          <a href="<?= base_url('admin/addpost');?>">
+            <i class="bi bi-plus-square"></i><span>List Post</span>
           </a>
         </li>
         <li>
-          <a href="components-accordion.html">
-            <i class="bi bi-pencil"></i><span>Edit Post</span>
+          <a href="<?= base_url('admin/category-post');?>">
+            <i class="bi bi-pencil"></i><span>Category Post</span>
           </a>
         </li>
       </ul>
@@ -34,22 +34,7 @@
       <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
           <a href="forms-elements.html">
-            <i class="bi bi-circle"></i><span>Form Elements</span>
-          </a>
-        </li>
-        <li>
-          <a href="forms-layouts.html">
-            <i class="bi bi-circle"></i><span>Form Layouts</span>
-          </a>
-        </li>
-        <li>
-          <a href="forms-editors.html">
-            <i class="bi bi-circle"></i><span>Form Editors</span>
-          </a>
-        </li>
-        <li>
-          <a href="forms-validation.html">
-            <i class="bi bi-circle"></i><span>Form Validation</span>
+            <i class="bi bi-circle"></i><span>Data User</span>
           </a>
         </li>
       </ul>
