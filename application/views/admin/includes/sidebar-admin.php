@@ -2,6 +2,11 @@
     <?php if ($this->session->userdata('role_id') == 1): ?>
         <ul class="sidebar-nav" id="sidebar-nav">
           <li class="nav-item">
+            <a class="nav-link"  href="<?= base_url('admin'); ?>">
+              <i class="bi bi-plus-square"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"  href="#">
               <i class="bi bi-person-fill"></i><span>Profile</span>
             </a>
@@ -50,6 +55,11 @@
         </ul>
     <?php elseif ($this->session->userdata('role_id') == 2): ?>
       <ul class="sidebar-nav" id="sidebar-nav">
+          <li class="nav-item">
+            <a class="nav-link"  href="<?= base_url('user'); ?>">
+              <i class="bi bi-plus-square"></i><span>Dashboard</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link"  href="#">
               <i class="bi bi-person-fill"></i><span>Profile</span>
