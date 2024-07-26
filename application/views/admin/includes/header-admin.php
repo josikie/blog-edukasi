@@ -13,7 +13,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/default_profile.svg" alt="Profile" class="rounded-circle">
+            <img height="20w" src="<?= base_url('assets/img/') . $user['image']?>"  alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?= $user['name']; ?></span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -26,7 +26,15 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <?php 
+                  $link = "";
+                  if($user['role_id'] == 1){
+                    $link = "admin/edit";
+                  }else{
+                    $link = "user/edit";
+                  }
+              ?>
+              <a class="dropdown-item d-flex align-items-center" href="<?= base_url($link);?>">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>

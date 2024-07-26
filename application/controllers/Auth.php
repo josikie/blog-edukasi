@@ -99,7 +99,7 @@ class Auth extends MY_Controller {
 			$data = [
 				'name' => htmlspecialchars($this->input->post('name', true)),
 				'email' => htmlspecialchars($this->input->post('email', true)),
-				'image' => 'default_profile.jpg',
+				'image' => 'default_profile.svg',
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'role_id' => 2,
 				'date_created' => time()

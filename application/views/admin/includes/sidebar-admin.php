@@ -7,7 +7,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#">
+            <a class="nav-link"  href="<?= base_url('admin/edit') ?>">
               <i class="bi bi-person-fill"></i><span>Profile</span>
             </a>
           </li>
@@ -61,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#">
+            <a class="nav-link"  href="<?= base_url('user/edit') ?>">
               <i class="bi bi-person-fill"></i><span>Profile</span>
             </a>
           </li>
