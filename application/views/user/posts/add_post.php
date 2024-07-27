@@ -42,8 +42,13 @@
       <div class="col-md-8 col-lg-9">
         <select class="form-select form-select-sm" name="category" aria-label="Category">
           <option selected>Select Category</option>
-          <option value="1">English</option>
-          <option value="2">Math</option>
+          <?php
+          if(!empty($categories)){
+            foreach ($categories as $category) {
+              echo "<option value='$category->id'>$category->name</option>";
+            }
+          }
+          ?>
         </select>
       </div>
     </div>

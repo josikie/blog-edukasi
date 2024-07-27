@@ -23,6 +23,7 @@ class Post extends MY_Controller
         $data['user'] = $this->db->get_where('users', ['email' 
         => $this->session->userdata('email')])->row_array();
         $data['role'] = "User";
+        $data['categories'] = $this->db->order_by('name','asc')->get('category')->result();
 		$this->form_validation->set_rules('title', 'Title', 'required|trim');
 		$this->form_validation->set_rules('article', 'Article');
 
@@ -65,6 +66,8 @@ class Post extends MY_Controller
         => $this->session->userdata('email')])->row_array();
         $data['role'] = "User";
         $data['user']['posts'] = $this->db->get_where('posts', ['id' => $id])->row_array();
+        $data['categories'] = $this->db->order_by('name','asc')->get('category')->result();
+
 		$this->form_validation->set_rules('title', 'Title', 'required|trim');
 		$this->form_validation->set_rules('article', 'Article');
 

@@ -48,16 +48,13 @@
                     <div class="row mb-3 p-3">
                       <select class="form-select form-select-sm" name="category" aria-label="Category">
                         <option selected>Select Category</option>
-                        <option value="1" 
-                          <?php if($user['posts']['category_id'] == 1) : ?> #
-                            selected
-                          <?php endif; ?>
-                        >English</option>
-                        <option value="2"
-                            <?php if($user['posts']['category_id'] == 2) : ?> #
-                              selected
-                            <?php endif; ?>
-                        >Math</option>
+                        <?php
+                        if(!empty($categories)){
+                          foreach ($categories as $category) {
+                            echo "<option value='$category->id' ".($category->id == $user['posts']['category_id'] ? 'selected':'').">$category->name</option>";
+                          }
+                        }
+                        ?>
                       </select>
                     </div>
                     <div class="text-center">
