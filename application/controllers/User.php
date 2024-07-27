@@ -60,11 +60,4 @@ class User extends MY_Controller {
             redirect('user');
         }
     }
-    public function post(){
-        $data['user'] = $this->db->get_where('users', ['email' 
-        => $this->session->userdata('email')])->row_array();
-        $data['role'] = "User";
-
-        $this->load->view('/user/post', $data);
-    }
 }
