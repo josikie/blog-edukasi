@@ -37,7 +37,7 @@
             </button>
           </div>
           <h5 class="card-title">Recent Post <span>| Today</span></h5>
-          <table class="table table-borderless datatable">
+          <table class="table table-borderless datatable" id="postTable">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -48,40 +48,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"><a href="#">#2457</a></th>
-                <td>June, 21 2023</td>
-                <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                <td><a href="#" class="text-primary"><?= $user['name']; ?></a></td>
-                <td>
-                  <button type="button" class="btn btn-danger">Hapus</button>
-                  <button type="button" class="btn btn-warning">Edit</button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><a href="#">#2147</a></th>
-                <td>June, 21 2023</td>
-                <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                <td><span class="badge bg-warning">Pending</span></td>
-              </tr>
-              <tr>
-                <th scope="row"><a href="#">#2049</a></th>
-                <td>June, 21 2023</td>
-                <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                <td><span class="badge bg-success">Approved</span></td>
-              </tr>
-              <tr>
-                <th scope="row"><a href="#">#2644</a></th>
-                <td>June, 21 2023</td>
-                <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                <td><span class="badge bg-danger">Rejected</span></td>
-              </tr>
-              <tr>
-                <th scope="row"><a href="#">#2644</a></th>
-                <td>June, 21 2023</td>
-                <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                <td><span class="badge bg-success">Approved</span></td>
-              </tr>
+              <!-- Tempat menyimpan perasaan -->
             </tbody>
           </table>
 
@@ -98,6 +65,9 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <?php $this->load->view('admin/includes/js-admin'); ?>
+
+  <!-- Add the following script tag -->
+  <script src="script.js"></script>
 
 </body>
 

@@ -316,4 +316,63 @@
     }, 200);
   }
 
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const postTableBody = document.querySelector('#postTable tbody');
+
+    document.querySelector('#addRowForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const newDateCreation = document.getElementById('newDateCreation').value;
+        const newTitle = document.getElementById('newTitle').value;
+        const newAuthors = document.getElementById('newAuthors').value;
+
+        addRow(newDateCreation, newTitle, newAuthors);
+
+        // Clear the form fields
+        document.getElementById('addRowForm').reset();
+    });
+
+    function addRow(dateCreation, title, authors) {
+        const newRow = document.createElement('tr');
+
+        newRow.innerHTML = `
+            <th scope="row"><a href="#">#${Math.floor(Math.random() * 10000)}</a></th>
+            <td>${dateCreation}</td>
+            <td><a href="#" class="text-primary">${title}</a></td>
+            <td><a class="text-primary">${authors}</a></td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Hapus</button>
+                <button type="button" class="btn btn-warning" onclick="editRow(this)">Edit</button>
+            </td>
+        `;
+
+        postTableBody.appendChild(newRow);
+    }
+
+    window.editRow = function(button) {
+        const row = button.closest('tr');
+        const cells = row.querySelectorAll('td');
+
+        const dateCreation = cells[0].innerText;
+        const title = cells[1].innerText;
+        const authors = cells[2].innerText;
+
+        const newDateCreation = prompt('Edit Date Creation:', dateCreation);
+        const newTitle = prompt('Edit Title:', title);
+        const newAuthors = prompt('Edit Authors:', authors);
+
+        if (newDateCreation !== null && newTitle !== null && newAuthors !== null) {
+            cells[0].innerText = newDateCreation;
+            cells[1].innerText = newTitle;
+            cells[2].innerText = newAuthors;
+        }
+    };
+
+    window.deleteRow = function(button) {
+        const row = button.closest('tr');
+        row.remove();
+    };
+});
+
+
 })();
