@@ -51,10 +51,8 @@
     <div class="row mb-3">
       <label for="article" class="col-md-4 col-lg-3 col-form-label">Article</label>
       <div class="col-md-8 col-lg-9">
-        <textarea class="tinymce-editor">
-                <p>Hello World!</p>
-                <p>This is TinyMCE <strong>full</strong> editor</p>
-              </textarea>
+        <textarea class="tinymce-editor" name="article" type="text" class="form-control" id="article">
+        </textarea>
         <!-- End TinyMCE Editor -->
       </div>
     </div>
