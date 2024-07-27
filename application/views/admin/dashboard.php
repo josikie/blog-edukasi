@@ -28,7 +28,11 @@
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-        <div class="card recent-sales overflow-auto">
+    <div class="card recent-sales overflow-auto">
+            <?php 
+                    $query = $this->db->get('posts');
+                    $dataAllPosts = $query->result_array();
+            ?>
             <div class="card-body">
             <h5 class="card-title">Recent Post <span>| Today</span></h5>
 
@@ -39,39 +43,28 @@
                     <th scope="col">Date Creation</th>
                     <th scope="col">Title</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row"><a href="#">#2457</a></th>
-                    <td>June, 21 2023</td>
-                    <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                    <td><span class="badge bg-success">Approved</span></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#">#2147</a></th>
-                    <td>June, 21 2023</td>
-                    <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#">#2049</a></th>
-                    <td>June, 21 2023</td>
-                    <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                    <td><span class="badge bg-success">Approved</span></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#">#2644</a></th>
-                    <td>June, 21 2023</td>
-                    <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                    <td><span class="badge bg-danger">Rejected</span></td>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="#">#2644</a></th>
-                    <td>June, 21 2023</td>
-                    <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                    <td><span class="badge bg-success">Approved</span></td>
-                </tr>
+                  <?php foreach($dataAllPosts as $dataPosts) : ?>
+                    <tr>
+                        <th scope="row"><a href="#"><?= $dataPosts['id'] ?></a></th>
+                        <td><?= $dataPosts['date'] ?></td>
+                        <td><a href="<?= base_url('detail_post/detail/' . $dataPosts['id']); ?>" class="text-primary"><?= $dataPosts['title'] ?></a></td>
+                        <?php if($dataPosts['approval'] == 1) : ?>
+                          <td><span class="badge bg-success">Approved</span></td>
+                        <?php elseif($dataPosts['approval'] == 2) : ?>
+                          <td><span class="badge bg-warning">Waiting for review</span></td>
+                        <?php else : ?>
+                          <td><span class="badge bg-danger">Rejected</span></td>
+                        <?php endif; ?>
+                        <td>
+                          <a href="<?= base_url('/admin_post/approved/'.$dataPosts['id']); ?>" class="btn btn-primary">Accept</a>
+                          <a href="<?= base_url('/admin_post/rejected/'.$dataPosts['id']); ?>" class="btn btn-danger">Reject</a>
+                        </td>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
             </table>
 

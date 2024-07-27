@@ -16,19 +16,8 @@
   <!-- End Sidebar-->
 
   <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Dashboard</h1>
-    </div><!-- End Page Title -->
-
-    <div class="row">
-        <div class="col-lg-g">
-            <?= $this->session->flashdata('message'); ?>
-        </div>
-    </div>
-
-    <section class="section dashboard">
-    <?php 
+    <?= $this->session->flashdata('message'); ?>
+        <?php 
             $user_id = $user['id'];
             $query = $this->db->get_where('posts', array('user_id' => $user_id));
             $dataAllPosts = $query->result_array();
@@ -44,6 +33,7 @@
                     <th scope="col">Date Creation</th>
                     <th scope="col">Title</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,7 +41,7 @@
                     <tr>
                         <th scope="row"><a href="#"><?= $dataPosts['id'] ?></a></th>
                         <td><?= $dataPosts['date'] ?></td>
-                        <td><a href="<?= base_url('detail_post/detail/' . $dataPosts['id']); ?>" class="text-primary" class="text-primary"><?= $dataPosts['title'] ?></a></td>
+                        <td><a href="<?= base_url('detail_post/detail/' . $dataPosts['id']); ?>" class="text-primary"><?= $dataPosts['title'] ?></a></td>
                         <?php if($dataPosts['approval'] == 1) : ?>
                           <td><span class="badge bg-success">Approved</span></td>
                         <?php elseif($dataPosts['approval'] == 2) : ?>
@@ -59,6 +49,10 @@
                         <?php else : ?>
                           <td><span class="badge bg-danger">Rejected</span></td>
                         <?php endif; ?>
+                        <td>
+                          <a href="<?= base_url('/post/edit_post/'.$dataPosts['id']); ?>" class="btn btn-primary">Edit</a>
+                          <a href="<?= base_url('/post/delete/'.$dataPosts['id']); ?>" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -66,8 +60,6 @@
 
             </div>
         </div>
-    </section>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -81,3 +73,4 @@
 </body>
 
 </html>
+
