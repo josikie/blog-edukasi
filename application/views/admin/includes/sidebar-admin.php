@@ -34,6 +34,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('manage/category-post');?>">
+              <i class="bi bi-pencil-square"></i><span>Category Post</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav-2" data-bs-toggle="collapse" href="#">
               <i class="bi bi-pencil-square"></i><span>Management Post</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
@@ -43,11 +48,7 @@
                   <i class="bi bi-plus-square"></i><span>List Post</span>
                 </a>
               </li>
-              <li>
-                <a href="<?= base_url('admin/category-post');?>">
-                  <i class="bi bi-pencil"></i><span>Category Post</span>
-                </a>
-              </li>
+              
             </ul>
           </li>
           <li class="nav-item">

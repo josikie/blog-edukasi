@@ -19,7 +19,7 @@
         <div class="pagetitle">
             <h1>Category Post</h1>
         </div><!-- End Page Title -->
-
+        <?= $this->session->flashdata('message'); ?>
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">
@@ -46,24 +46,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $num = 1;
+                                    foreach ($categories as $category):
+                                    ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Networking</td>
-                                        <td>28</td>
+                                        <td><?= $num++;?></td>
+                                        <td><?= $category->name;?></td>
+                                        <td><?= $category->count;?></td>
                                         <td>
-                                            <button type="button" class="btn btn-danger">Hapus</button>
-                                            <button type="button" class="btn btn-warning" onclick="editCategory('1')">Edit</button>
+                                            <button type="button" class="btn btn-danger" onclick="dropCategory('<?= $category->id;?>')">Hapus</button>
+                                            <button type="button" class="btn btn-warning" onclick="editCategory('<?= $category->id;?>')">Edit</button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Data Science</td>
-                                        <td>78</td>
-                                        <td>
-                                            <button type="button" class="btn btn-danger">Hapus</button>
-                                            <button type="button" class="btn btn-warning" onclick="editCategory('2')">Edit</button>
-                                        </td>
-                                    </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
@@ -79,6 +75,7 @@
                                     <h5 class="modal-title">New Post</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+                                <?= form_open(base_url('manage/categorypost/save'), ['method' => 'POST']);?>
                                 <div class="modal-body">
                                     <!-- TinyMCE Editor -->
                                     <textarea class="tinymce-editor">
@@ -89,8 +86,9 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
+                                <?= form_close(); ?>
                             </div>
                         </div>
                     </div>
@@ -115,7 +113,7 @@
             addNew = () => {
                 $.ajax({
                     type: "post",
-                    url: "<?= base_url('admin/categorypost/create');?>",
+                    url: "<?= base_url('manage/categorypost/create');?>",
                     data: {},
                     dataType: "json",
                     success: function (response) {
@@ -133,7 +131,7 @@
             editCategory = (id) => {
                 $.ajax({
                     type: "post",
-                    url: "<?= base_url('admin/categorypost/edit');?>",
+                    url: "<?= base_url('manage/categorypost/edit');?>",
                     data: {
                         id: id
                     },
@@ -148,6 +146,27 @@
                         }
                     }
                 });
+            }
+
+            dropCategory = (id, status = false) => {
+                if(!status) {
+                    if(confirm('Will you delete it?')) {
+                        dropCategory(id, true);
+                    }
+                    return false;
+                } else {
+                    $.ajax({
+                        type: "post",
+                        url: "<?= base_url('manage/categorypost/delete');?>",
+                        data: {
+                            id: id
+                        },
+                        dataType: "json",
+                        success: function (response) {
+                            location.reload();
+                        }
+                    });
+                }
             }
         });
     </script>
