@@ -38,7 +38,7 @@
               <i class="bi bi-pencil-square"></i><span>Category Post</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#components-nav-2" data-bs-toggle="collapse" href="#">
               <i class="bi bi-pencil-square"></i><span>Management Post</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
@@ -49,6 +49,18 @@
                 </a>
               </li>
               
+            </ul>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-pencil-square"></i><span>Management user</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="users-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                  <a href="<?= base_url('admin/users'); ?>">
+                    <i class="bi bi-person"></i><span>List User</span>
+                  </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

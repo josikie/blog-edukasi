@@ -12,6 +12,7 @@ class Admin extends MY_Controller {
                 redirect('auth/blocked');
             }
         }
+        $this->load->model('m_users');
     }
     public function index(){
         $data['user'] = $this->db->get_where('users', ['email' 
@@ -61,5 +62,14 @@ class Admin extends MY_Controller {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profile Updated.</div>');
             redirect('admin');
         }
+    }
+
+    public function users() {
+        $this->vars['user'] = $this->db->get_where('users', ['email' 
+        => $this->session->userdata('email')])->row_array();
+        $this->vars['role'] = "Admin";
+        $this->vars['users'] = $this->m_users->all()->result();
+
+        $this->load->view('/user/list_user', $this->vars);
     }
 }
