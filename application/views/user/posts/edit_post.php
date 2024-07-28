@@ -38,17 +38,20 @@
       </div>
     </div>
 
-    <div class="row mb-3 p-3">
-      <select class="form-select form-select-sm" name="category" aria-label="Category">
-        <option selected>Select Category</option>
-        <?php
-        if (!empty($categories)) {
-          foreach ($categories as $category) {
-            echo "<option value='$category->id' " . ($category->id == $user['posts']['category_id'] ? 'selected' : '') . ">$category->name</option>";
+    <div class="row mb-3">
+      <label for="article" class="col-md-4 col-lg-3 col-form-label">Category</label>
+      <div class="col-md-8 col-lg-9">
+        <select class="form-select form-select-sm" name="category" aria-label="Category">
+          <option selected>Select Category</option>
+          <?php
+          if (!empty($categories)) {
+            foreach ($categories as $category) {
+              echo "<option value='$category->id' " . ($category->id == $user['posts']['category_id'] ? 'selected' : '') . ">$category->name</option>";
+            }
           }
-        }
-        ?>
-      </select>
+          ?>
+        </select>
+      </div>
     </div>
 
     <div class="row mb-3">
