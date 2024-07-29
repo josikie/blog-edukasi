@@ -17,11 +17,6 @@
 
   <main id="main" class="main">
     <?= $this->session->flashdata('message'); ?>
-        <?php 
-            $user_id = $user['id'];
-            $query = $this->db->get_where('posts', array('user_id' => $user_id));
-            $dataAllPosts = $query->result_array();
-        ?>
          <div class="card recent-sales overflow-auto">
             <div class="card-body">
             <h5 class="card-title">Recent Post <span>| Today</span> <a href="<?= base_url('/post/add_post'); ?>" class="btn btn-outline-primary">New Post</a></h5>

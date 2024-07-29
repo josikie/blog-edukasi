@@ -55,8 +55,8 @@
                                         <td><?= $category->name;?></td>
                                         <td><?= $category->count;?></td>
                                         <td>
-                                            <button type="button" class="btn btn-danger" onclick="dropCategory('<?= $category->id;?>')">Hapus</button>
-                                            <button type="button" class="btn btn-warning" onclick="editCategory('<?= $category->id;?>')">Edit</button>
+                                            <button type="button" class="btn btn-primary" onclick="editCategory('<?= $category->id;?>')">Edit</button>
+                                            <button type="button" class="btn btn-danger" onclick="dropCategory('<?= $category->id;?>')">Delete</button>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>

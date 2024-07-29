@@ -15,6 +15,14 @@ class Post extends MY_Controller
         $data['user'] = $this->db->get_where('users', ['email' 
         => $this->session->userdata('email')])->row_array();
         $data['role'] = "User";
+
+        $user_id = $data['user']['id'];
+        if($this->session->userdata('role_id') == 1) {
+            $query = $this->db->get('posts');
+        } else {
+            $query = $this->db->get_where('posts', array('user_id' => $user_id));
+        }
+        $data['dataAllPosts'] = $query->result_array();
         $this->load->view('/user/posts/list_post', $data);
     }
 
@@ -46,6 +54,7 @@ class Post extends MY_Controller
             }
 			$data = [
 				'title' => htmlspecialchars($this->input->post('title', true)),
+                'slug' => url_title($this->input->post('title'), '-', true),
 				'article' => htmlspecialchars($this->input->post('article', true)),
 				'image' => $new_image,
 				'date'  => date('Y-m-d'),
@@ -87,18 +96,22 @@ class Post extends MY_Controller
                     echo $this->upload->display_errors();
                 }
             }
-			$data = [
+			$store = [
 				'title' => htmlspecialchars($this->input->post('title', true)),
+                'slug' => url_title($this->input->post('title'), '-', true),
 				'article' => htmlspecialchars($this->input->post('article', true)),
 				'image' => $new_image,
 				'date'  => date('Y-m-d'),
-                'user_id' => $data['user']['id'],
                 'approval' => $data['user']['posts']['approval'],
                 'category_id' => htmlspecialchars($this->input->post('category', true))
 			];
+            if($this->session->userdata('role_id') != 1) {
+                $store['user_id'] = $data['user']['id'];
+            }
+
 			// insert user
             $this->db->where('id', $id);
-			$this->db->update('posts', $data);
+			$this->db->update('posts', $store);
 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Article Updated.</div>');
 			redirect('post');
 		}

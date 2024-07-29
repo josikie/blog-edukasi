@@ -34,9 +34,7 @@
                             <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                             <div class="trending-animated">
                                 <ul id="js-news" class="js-hidden">
-                                    <li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
-                                    <li class="news-item">Spondon IT sit amet, consectetur.......</li>
-                                    <li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li class="news-item"><?= $trending_top->title;?></li>
                                 </ul>
                             </div>
                             
@@ -48,49 +46,52 @@
                         <!-- Trending Top -->
                         <div class="trending-top mb-30">
                             <div class="trend-top-img">
-                                <img src="<?= base_url('assets/frontend');?>/img/trending/trending_top.jpg" alt="">
+                                <?php
+                                if(!empty($trending_top->image)) {
+                                    if(file_exists('assets/img/posts/'.$trending_top->image)) {
+                                ?>
+                                    <img src="<?= base_url('assets/img/posts/'.$trending_top->image);?>" alt="">
+                                <?php
+                                    }
+                                } else { ?>
+                                    <img src="<?= base_url('assets/frontend');?>/img/trending/trending_top.jpg" alt="">
+                                <?php } ?>
                                 <div class="trend-top-cap">
-                                    <span>Appetizers</span>
-                                    <h2><a href="details.html">Welcome To The Best Model Winner<br> Contest At Look of the year</a></h2>
+                                    <span><?= $trending_top->name;?></span>
+                                    <h2><a href="<?= base_url('article/detail/'. $trending_top->slug);?>"><?= $trending_top->title;?></a></h2>
                                 </div>
                             </div>
                         </div>
                         <!-- Trending Bottom -->
                         <div class="trending-bottom">
                             <div class="row">
-                                <div class="col-lg-4">
-                                <div class="single-bottom mb-35">
-                                    <div class="trend-bottom-img mb-30">
-                                        <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom1.jpg" alt="">
-                                    </div>
-                                    <div class="trend-bottom-cap">
-                                        <span class="color1">Lifestyple</span>
-                                        <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
-                                    </div>
-                                </div>
-                                </div>
+                                <?php
+                                if(!empty($trending_bottom)) {
+                                    foreach($trending_bottom as $item_bottom){
+                                ?>
                                 <div class="col-lg-4">
                                     <div class="single-bottom mb-35">
                                         <div class="trend-bottom-img mb-30">
-                                            <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom2.jpg" alt="">
+                                            <?php
+                                            if(!empty($item_bottom->image)) {
+                                                if(file_exists('assets/img/posts/'.$item_bottom->image)) { 
+                                            ?>
+                                                <img src="<?= base_url('assets/img/posts/'.$item_bottom->image);?>" alt="">
+                                                <?php } else { ?>
+                                                <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom1.jpg" alt="">
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </div>
                                         <div class="trend-bottom-cap">
-                                            <span class="color2">Sports</span>
-                                            <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
+                                            <span class="color1"><?=$item_bottom->name;?></span>
+                                            <h4><a href="<?= base_url('article/detail/'. $item_bottom->slug);?>"><?=$item_bottom->title;?></a></h4>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="single-bottom mb-35">
-                                        <div class="trend-bottom-img mb-30">
-                                            <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom3.jpg" alt="">
-                                        </div>
-                                        <div class="trend-bottom-cap">
-                                            <span class="color3">Travels</span>
-                                            <h4><a href="details.html"> Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } } ?>
+                                
                             </div>
                         </div>
                     </div>
