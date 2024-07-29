@@ -1,577 +1,749 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html class="no-js" lang="zxx">
     <head>
-        <?php $this->load->view('frontend/includes/head-frontend'); ?>
-    </head>
+        <?php $this->load->view('frontend/includes/head'); ?>
+   </head>
 
-    <body>
-        <?php $this->load->view('frontend/includes/header-frontend'); ?>
-
-        <!-- Carousel Start -->
-        <div class="header-carousel owl-carousel">
-            <div class="header-carousel-item bg-primary">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-7 animated fadeInLeft">
-                                <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
-                                    <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p>
-                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 animated fadeInRight">
-                                <div class="calrousel-img" style="object-fit: cover;">
-                                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-carousel-item bg-primary">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
-                            <div class="col-lg-5 animated fadeInLeft">
-                                <div class="calrousel-img">
-                                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 animated fadeInRight">
-                                <div class="text-sm-center text-md-end">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
-                                    <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
-                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                    </p>
-                                    <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
-                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+   <body>
+       
+    <!-- Preloader Start -->
+    <!-- <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="<?= base_url('assets/frontend');?>/img/logo/logo.png" alt="">
                 </div>
             </div>
         </div>
-        <!-- Carousel End -->
+    </div> -->
+    <!-- Preloader Start -->
 
-        <!-- Feature Start -->
-        <div class="container-fluid feature bg-light py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Features</h4>
-                    <h1 class="display-4 mb-4">Insurance Provide you a Better Future</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="far fa-handshake fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Trusted Company</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-dollar-sign fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Anytime Money Back</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-bullseye fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">Flexible Plans</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fa fa-headphones fa-3x"></i>
-                            </div>
-                            <h4 class="mb-4">24/7 Fast Support</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
+    <?php  $this->load->view('frontend/includes/header'); ?>
 
-        <!-- About Start -->
-        <div class="container-fluid bg-light about pb-5">
-            <div class="container pb-5">
-                <div class="row g-5">
-                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="about-item-content bg-white rounded p-5 h-100">
-                            <h4 class="text-primary">About Our Company</h4>
-                            <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
-                            </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
-                            </p>
-                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
-                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                            <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="bg-white rounded p-5 h-100">
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-12">
-                                    <div class="rounded bg-light">
-                                        <img src="img/about-1.png" class="img-fluid rounded w-100" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Insurance Policies</h4>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Awards WON</h4>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Skilled Agents</h4>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="counter-item bg-light rounded p-3 h-100">
-                                        <div class="counter-counting">
-                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
-                                            <span class="h1 fw-bold text-primary">+</span>
-                                        </div>
-                                        <h4 class="mb-0 text-dark">Team Members</h4>
-                                    </div>
-                                </div>
+    <main>
+    <!-- Trending Area Start -->
+    <div class="trending-area fix">
+        <div class="container">
+            <div class="trending-main">
+                <!-- Trending Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="trending-tittle">
+                            <strong>Trending now</strong>
+                            <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+                            <div class="trending-animated">
+                                <ul id="js-news" class="js-hidden">
+                                    <li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li class="news-item">Spondon IT sit amet, consectetur.......</li>
+                                    <li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                </ul>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-        <!-- Service Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-4 mb-4">We Provide Best Services</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-users fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Life Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Trending Top -->
+                        <div class="trending-top mb-30">
+                            <div class="trend-top-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/trending_top.jpg" alt="">
+                                <div class="trend-top-cap">
+                                    <span>Appetizers</span>
+                                    <h2><a href="details.html">Welcome To The Best Model Winner<br> Contest At Look of the year</a></h2>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-hospital fa-2x"></i>
+                        <!-- Trending Bottom -->
+                        <div class="trending-bottom">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                <div class="single-bottom mb-35">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom1.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <span class="color1">Lifestyple</span>
+                                        <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Health Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-car fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Car Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/blog-4.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-home fa-2x"></i>
-                                </div>
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">Home Insurance</a>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-        <!-- FAQs Start -->
-        <div class="container-fluid faq-section bg-light py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="h-100">
-                            <div class="mb-5">
-                                <h4 class="text-primary">Some Important FAQ's</h4>
-                                <h1 class="display-4 mb-0">Common Frequently Asked Questions</h1>
-                            </div>
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Q: What happens during Freshers' Week?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body rounded">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                <div class="col-lg-4">
+                                    <div class="single-bottom mb-35">
+                                        <div class="trend-bottom-img mb-30">
+                                            <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom2.jpg" alt="">
+                                        </div>
+                                        <div class="trend-bottom-cap">
+                                            <span class="color2">Sports</span>
+                                            <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Q: What is the transfer application process?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                <div class="col-lg-4">
+                                    <div class="single-bottom mb-35">
+                                        <div class="trend-bottom-img mb-30">
+                                            <img src="<?= base_url('assets/frontend');?>/img/trending/trending_bottom3.jpg" alt="">
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Q: Why should I attend community college?
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                        <div class="trend-bottom-cap">
+                                            <span class="color3">Travels</span>
+                                            <h4><a href="details.html"> Welcome To The Best Model Winner Contest</a></h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                        <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQs End -->
-
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">From Blog</h4>
-                    <h1 class="display-4 mb-4">News And Updates</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
+                    <!-- Riht content -->
+                    <div class="col-lg-4">
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/right1.jpg" alt="">
                             </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            <div class="trand-right-cap">
+                                <span class="color1">Concert</span>
+                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/right2.jpg" alt="">
                             </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            <div class="trand-right-cap">
+                                <span class="color3">sea beach</span>
+                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Business</span>
-                                </div>
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/right3.jpg" alt="">
                             </div>
-                            <div class="blog-content p-4">
-                                <div class="blog-comment d-flex justify-content-between mb-3">
-                                    <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                    <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                                </div>
-                                <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
-                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                                <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                            <div class="trand-right-cap">
+                                <span class="color2">Bike Show</span>
+                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
+                            </div>
+                        </div> 
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/right4.jpg" alt="">
+                            </div>
+                            <div class="trand-right-cap">
+                                <span class="color4">See beach</span>
+                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
+                            </div>
+                        </div>
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="<?= base_url('assets/frontend');?>/img/trending/right5.jpg" alt="">
+                            </div>
+                            <div class="trand-right-cap">
+                                <span class="color1">Skeping</span>
+                                <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
-
-        <!-- Team Start -->
-        <div class="container-fluid team pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+    </div>
+    <!-- Trending Area End -->
+    <!--   Weekly-News start -->
+    <div class="weekly-news-area pt-50">
+        <div class="container">
+           <div class="weekly-wrapper">
+                <!-- section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-30">
+                            <h3>Weekly Top News</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="weekly-news-active dot-style d-flex dot-style">
+                            <div class="weekly-single">
+                                <div class="weekly-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weeklyNews2.jpg" alt="">
+                                </div>
+                                <div class="weekly-caption">
+                                    <span class="color1">Strike</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div> 
+                            <div class="weekly-single active">
+                                <div class="weekly-img">
+                                        <img src="<?= base_url('assets/frontend');?>/img/news/weeklyNews1.jpg" alt="">
+                                </div>
+                                <div class="weekly-caption">
+                                    <span class="color1">Strike</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                                 </div>
                             </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            <div class="weekly-single">
+                                <div class="weekly-img">
+                                        <img src="<?= base_url('assets/frontend');?>/img/news/weeklyNews3.jpg" alt="">
+                                </div>
+                                <div class="weekly-caption">
+                                    <span class="color1">Strike</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                                 </div>
                             </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            <div class="weekly-single">
+                                <div class="weekly-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weeklyNews1.jpg" alt="">
                                 </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                <div class="weekly-caption">
+                                    <span class="color1">Strike</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                                 </div>
-                            </div>
-                            <div class="team-title p-4">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+           </div>
         </div>
-        <!-- Team End -->
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+    </div>           
+    <!-- End Weekly-News -->
+   <!-- Whats New Start -->
+    <section class="whats-news-area pt-50 pb-20">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-8">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="section-tittle mb-30">
+                            <h3>Whats New</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <div class="properties__button">
+                            <!--Nav Button  -->                                            
+                            <nav>                                                                     
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Lifestyle</a>
+                                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Travel</a>
+                                    <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Fashion</a>
+                                    <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
+                                    <a class="nav-item nav-link" id="nav-technology" data-toggle="tab" href="#nav-techno" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>
                                 </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                            </nav>
+                            <!--End Nav Button  -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Nav Card -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- card one -->
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">           
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card two -->
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card three -->
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card fure -->
+                            <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card Five -->
+                            <div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-Sports">
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card Six -->
+                            <div class="tab-pane fade" id="nav-techno" role="tabpanel" aria-labelledby="nav-technology">
+                                <div class="whats-news-caption">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews1.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews2.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews3.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="single-what-news mb-100">
+                                                <div class="what-img">
+                                                    <img src="<?= base_url('assets/frontend');?>/img/news/whatNews4.jpg" alt="">
+                                                </div>
+                                                <div class="what-cap">
+                                                    <span class="color1">Night party</span>
+                                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    <!-- End Nav Card -->
                     </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Section Tittle -->
+                <div class="section-tittle mb-40">
+                    <h3>Follow Us</h3>
+                </div>
+                <!-- Flow Socail -->
+                <div class="single-follow mb-45">
+                    <div class="single-box">
+                        <div class="follow-us d-flex align-items-center">
+                            <div class="follow-social">
+                                <a href="#"><img src="<?= base_url('assets/frontend');?>/img/news/icon-fb.png" alt=""></a>
                             </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
+                            <div class="follow-count">  
+                                <span>8,045</span>
+                                <p>Fans</p>
+                            </div>
+                        </div> 
+                        <div class="follow-us d-flex align-items-center">
+                            <div class="follow-social">
+                                <a href="#"><img src="<?= base_url('assets/frontend');?>/img/news/icon-tw.png" alt=""></a>
+                            </div>
+                            <div class="follow-count">
+                                <span>8,045</span>
+                                <p>Fans</p>
+                            </div>
+                        </div>
+                            <div class="follow-us d-flex align-items-center">
+                            <div class="follow-social">
+                                <a href="#"><img src="<?= base_url('assets/frontend');?>/img/news/icon-ins.png" alt=""></a>
+                            </div>
+                            <div class="follow-count">
+                                <span>8,045</span>
+                                <p>Fans</p>
+                            </div>
+                        </div>
+                        <div class="follow-us d-flex align-items-center">
+                            <div class="follow-social">
+                                <a href="#"><img src="<?= base_url('assets/frontend');?>/img/news/icon-yo.png" alt=""></a>
+                            </div>
+                            <div class="follow-count">
+                                <span>8,045</span>
+                                <p>Fans</p>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                </div>
+                <!-- New Poster -->
+                <div class="news-poster d-none d-lg-block">
+                    <img src="<?= base_url('assets/frontend');?>/img/news/news_card.jpg" alt="">
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Whats New End -->
+    <!--   Weekly2-News start -->
+    <div class="weekly2-news-area  weekly2-pading gray-bg">
+        <div class="container">
+            <div class="weekly2-wrapper">
+                <!-- section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-30">
+                            <h3>Weekly Top News</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="weekly2-news-active dot-style d-flex dot-style">
+                            <div class="weekly2-single">
+                                <div class="weekly2-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News1.jpg" alt="">
+                                </div>
+                                <div class="weekly2-caption">
+                                    <span class="color1">Corporate</span>
+                                    <p>25 Jan 2020</p>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div> 
+                            <div class="weekly2-single">
+                                <div class="weekly2-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News2.jpg" alt="">
+                                </div>
+                                <div class="weekly2-caption">
+                                    <span class="color1">Event night</span>
+                                    <p>25 Jan 2020</p>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div> 
+                            <div class="weekly2-single">
+                                <div class="weekly2-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News3.jpg" alt="">
+                                </div>
+                                <div class="weekly2-caption">
+                                    <span class="color1">Corporate</span>
+                                    <p>25 Jan 2020</p>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
                                 </div>
                             </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
+                             <div class="weekly2-single">
+                                <div class="weekly2-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News4.jpg" alt="">
+                                </div>
+                                <div class="weekly2-caption">
+                                    <span class="color1">Event time</span>
+                                    <p>25 Jan 2020</p>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div> 
+                             <div class="weekly2-single">
+                                <div class="weekly2-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News4.jpg" alt="">
+                                </div>
+                                <div class="weekly2-caption">
+                                    <span class="color1">Corporate</span>
+                                    <p>25 Jan 2020</p>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>           
+    <!-- End Weekly-News -->
+    <!-- Start Youtube -->
+    <div class="youtube-area video-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="video-items-active">
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         
+                        </div>
+                        <div class="video-items text-center">
+                            <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="video-caption">
+                            <div class="top-caption">
+                                <span class="color1">Politics</span>
+                            </div>
+                            <div class="bottom-caption">
+                                <h2>Welcome To The Best Model Winner Contest At Look of the year</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="testmonial-nav text-center">
+                            <div class="single-video">
+                                <iframe  src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe  src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                </div>
+                            </div>
+                            <div class="single-video">
+                                <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-intro">
+                                    <h4>Welcotme To The Best Model Winner Contest</h4>
                                 </div>
                             </div>
                         </div>
@@ -579,10 +751,92 @@
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
-
-
-        <?php $this->load->view('frontend/includes/footer-frontend'); ?>
+    </div> 
+    <!-- End Start youtube -->
+    <!--  Recent Articles start -->
+    <div class="recent-articles">
+        <div class="container">
+           <div class="recent-wrapper">
+                <!-- section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-30">
+                            <h3>Recent Articles</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="recent-active dot-style d-flex dot-style">
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/recent1.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/recent2.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/recent3.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                            <div class="single-recent mb-100">
+                                <div class="what-img">
+                                    <img src="<?= base_url('assets/frontend');?>/img/news/recent2.jpg" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">Night party</span>
+                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>           
+    <!--Recent Articles End -->
+    <!--Start pagination -->
+    <div class="pagination-area pb-45 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="single-wrap d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                              <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow roted"></span></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                              <li class="page-item"><a class="page-link" href="#"><span class="flaticon-arrow right-arrow"></span></a></li>
+                            </ul>
+                          </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End pagination  -->
+    </main>
+    
+   <?php $this->load->view('frontend/includes/footer'); ?>
+   
+	<?php $this->load->view('frontend/includes/js'); ?>
+        
     </body>
-
 </html>
