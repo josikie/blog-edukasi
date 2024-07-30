@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 27, 2024 at 01:22 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost:3306
+-- Generation Time: Jul 30, 2024 at 12:11 AM
+-- Server version: 5.7.24
+-- PHP Version: 8.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
@@ -38,7 +38,8 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'English'),
-(2, 'Math');
+(2, 'Math'),
+(3, 'Science');
 
 -- --------------------------------------------------------
 
@@ -52,7 +53,7 @@ CREATE TABLE `comments` (
   `comment_body` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `comments`
@@ -73,20 +74,22 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `title` varchar(256) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
   `image` varchar(255) NOT NULL,
   `article` text NOT NULL,
   `approval` tinyint(1) NOT NULL,
   `user_id` int(11) NOT NULL,
   `category_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts`
 --
 
-INSERT INTO `posts` (`id`, `date`, `title`, `image`, `article`, `approval`, `user_id`, `category_id`) VALUES
-(12, '2024-07-27', 'New Post', 'slides-3.jpg', 'Hi There! This is new post', 1, 12, 1),
-(13, '2024-07-27', 'Laut', 'slides-3.jpg', 'Hi There! This is Ocean', 2, 11, 2);
+INSERT INTO `posts` (`id`, `date`, `title`, `slug`, `image`, `article`, `approval`, `user_id`, `category_id`) VALUES
+(12, '2024-07-29', 'New Post', 'new-post', 'default_profile.svg', '&lt;p&gt;Hi There! This is new post&lt;/p&gt;', 1, 12, 2),
+(13, '2024-07-29', 'laut', 'laut', 'default_profile.svg', '&lt;p&gt;Hi There! This is Ocean&lt;/p&gt;', 1, 11, 2),
+(15, '2024-07-29', 'tes', 'tes', 'default_profile.svg', '&lt;p&gt;tesss&lt;/p&gt;', 1, 13, 3);
 
 -- --------------------------------------------------------
 
@@ -102,7 +105,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `role_id` int(11) NOT NULL,
   `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -111,7 +114,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `image`, `email`, `password`, `role_id`, `date_created`) VALUES
 (11, 'Josi Kie', 'Logo_Disintar1.jpg', 'admin@gmail.com', '$2y$10$tlU68tzsfacFxpitWetuke0T8zNjHCNRPWLQOfyWKusdj1VxNrwH6', 1, 1721991058),
 (12, 'Josi', 'Juniot_Pilot_SBT1.png', 'member@gmail.com', '$2y$10$ns4onrvOJTkbxoknbz4/qetEEHzAo8NfpSQItRCjSbtZxiJN7/99C', 2, 1721998358),
-(13, 'Admin', 'Logo_Disintar1.jpg', 'admin1@gmail.com', '$2y$10$WFcGjuuIFuXbCMuOBkrsz.6U.1Y3nUMF8X8Ffoi6UTEMREkVnD5xi', 1, 20240727);
+(13, 'Admin', 'profile.JPG', 'admin1@gmail.com', '$2y$10$WFcGjuuIFuXbCMuOBkrsz.6U.1Y3nUMF8X8Ffoi6UTEMREkVnD5xi', 1, 20240727),
+(14, 'Sutris', 'default_profile.svg', 'sutris4488@gmail.com', '$2y$10$AKipBjRrIj01AwjeMuYLHuCXM0M9gxDm/idhu5ieT0q.9CF6XHyxi', 2, 1722115086);
 
 --
 -- Indexes for dumped tables
@@ -152,7 +156,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -164,13 +168,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

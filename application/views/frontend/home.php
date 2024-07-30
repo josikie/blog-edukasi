@@ -47,12 +47,11 @@
                         <div class="trending-top mb-30">
                             <div class="trend-top-img">
                                 <?php
-                                if(!empty($trending_top->image)) {
-                                    if(file_exists('assets/img/posts/'.$trending_top->image)) {
+                                if(!empty($trending_top->image) && (file_exists('assets/img/posts/'.$trending_top->image))) {
                                 ?>
                                     <img src="<?= base_url('assets/img/posts/'.$trending_top->image);?>" alt="">
                                 <?php
-                                    }
+                                    
                                 } else { ?>
                                     <img src="<?= base_url('assets/frontend');?>/img/trending/trending_top.jpg" alt="">
                                 <?php } ?>
