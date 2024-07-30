@@ -28,6 +28,11 @@ class M_post extends CI_Model
         return $this->db->get();
     }
 
+    public function getCategories() {
+        return $this->db->get('category')->result();
+    }
+    
+
     public function insert($id, $data) {
         return $this->db->insert('posts',$data);
     }
