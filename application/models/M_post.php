@@ -31,6 +31,25 @@ class M_post extends CI_Model
     public function getCategories() {
         return $this->db->get('category')->result();
     }
+
+    public function getComments($id) {
+        $this->db->select('comments.*,users.name,users.image,users.email')
+            ->from('comments')
+            ->join('users','users.id=comments.user_id','left')
+            ->where('comments.post_id', $id);
+        return $this->db->get();            
+    }
+
+    public function getRecentPost($limit = 0) {
+        $this->db->select('posts.*,category.name')
+            ->from('posts')
+            ->join('category','category.id=posts.category_id','left');
+            if($limit!=0){
+                $this->db->limit($limit);
+            }
+            $this->db->order_by('posts.date','desc');
+        return $this->db->get();
+    }
     
 
     public function insert($id, $data) {

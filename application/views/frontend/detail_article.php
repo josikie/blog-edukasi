@@ -107,109 +107,62 @@
                   </div>
                </div>
                <div class="comments-area">
-                  <h4>05 Comments</h4>
+                  <h4><?= number_format($post->count_comments,0);?> Comments</h4>
+                  <?php
+                  if(!empty($post->comments)) {
+                     foreach($post->comments as $comment) {
+                  ?>
                   <div class="comment-list">
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="assets/img/comment/comment_1.png" alt="">
+                              <?php
+                              if(!empty($comment->image)) { ?>
+                              <img src="<?= base_url('assets/img/'.$comment->image);?>" alt="">
+                              <?php } else { ?>
+                                 <img src="<?= base_url('assets/frontend');?>/img/comment/comment_1.png" alt="">
+                              <?php } ?>
                            </div>
                            <div class="desc">
                               <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                 <?= $comment->comment_body;?>
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="#"><?= $comment->name;?></a>
                                     </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                    <p class="date"><?= date('d-m-Y H:i a', strtotime($comment->comment_date));?> </p>
                                  </div>
                                  <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
+                                    <?php
+                                    if($this->session->userdata('email') && $comment->email == $this->session->userdata('email')) { ?>
+                                    <a href="<?= base_url('comment/delete/'. $comment->id);?>" class="btn-reply text-danger text-uppercase">delete</a>
+                                    <?php } ?>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="assets/img/comment/comment_2.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="assets/img/comment/comment_3.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  <?php } } ?>
+                  
                </div>
                <div class="comment-form">
                   <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
+                  <?php
+                  if(!$this->session->userdata('email')){
+                     echo "<div class='alert alert-danger'>Silakan login terlebih dahulu</div>";
+                  } else {
+                  ?>
+                  <form class="form-contact comment_form" action="<?= base_url('comment/add_comment'); ?>" id="commentForm" method="POST">
                      <div class="row">
                         <div class="col-12">
                            <div class="form-group">
+                              <input type="hidden" name="post_id" value="<?= $post->id;?>">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
                                  placeholder="Write Comment"></textarea>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                 <?= form_error('comment', '<small class="text-danger ps-1">', '</small>'); ?>
                            </div>
                         </div>
                      </div>
@@ -217,11 +170,12 @@
                         <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
                      </div>
                   </form>
+                  <?php } ?>
                </div>
             </div>
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
-                  <aside class="single_sidebar_widget search_widget">
+                  <!-- <aside class="single_sidebar_widget search_widget">
                      <form action="#">
                         <div class="form-group">
                            <div class="input-group mb-3">
@@ -235,162 +189,48 @@
                         <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                            type="submit">Search</button>
                      </form>
-                  </aside>
+                  </aside> -->
                   <aside class="single_sidebar_widget post_category_widget">
                      <h4 class="widget_title">Category</h4>
                      <ul class="list cat-list">
+                        <?php
+                        if(!empty($categories)) {
+                           foreach($categories as $category) {
+                        ?>
                         <li>
                            <a href="#" class="d-flex">
-                              <p>Resaurant food</p>
-                              <p>(37)</p>
+                              <p><?= $category->name;?></p>
+                              <p>(<?= number_format($category->count,0);?>)</p>
                            </a>
                         </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Travel news</p>
-                              <p>(10)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Modern technology</p>
-                              <p>(03)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Product</p>
-                              <p>(11)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Inspiration</p>
-                              <p>(21)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Health Care</p>
-                              <p>(21)</p>
-                           </a>
-                        </li>
+                        <?php
+                           }
+                        }
+                        ?>
                      </ul>
                   </aside>
                   <aside class="single_sidebar_widget popular_post_widget">
                      <h3 class="widget_title">Recent Post</h3>
+                     <?php
+                     if(!empty($recent_posts)) {
+                        foreach($recent_posts as $recent) {
+                           $pathImgRecent = base_url('assets/frontend/img/post/post_1.png');
+                           if(!empty($recent->image)) {
+                              $pathImgRecent = base_url('assets/img/posts/'. $recent->image);
+                           }
+                     ?>
                      <div class="media post_item">
-                        <img src="assets/img/post/post_1.png" alt="post">
+                        <img src="<?= $pathImgRecent;?>" class="rounded" style="object-fit: cover;" width="80px" height="80px" alt="post">
                         <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>From life was you fish...</h3>
+                           <a href="<?= base_url('article/'.$recent->slug);?>">
+                              <h3><?= $recent->title;?></h3>
                            </a>
-                           <p>January 12, 2019</p>
+                           <p><?= date('d M Y', strtotime($recent->date));?></p>
                         </div>
                      </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_2.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>The Amazing Hubble</h3>
-                           </a>
-                           <p>02 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_3.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Astronomy Or Astrology</h3>
-                           </a>
-                           <p>03 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_4.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Asteroids telescope</h3>
-                           </a>
-                           <p>01 Hours ago</p>
-                        </div>
-                     </div>
+                     <?php }} ?>
                   </aside>
-                  <aside class="single_sidebar_widget tag_cloud_widget">
-                     <h4 class="widget_title">Tag Clouds</h4>
-                     <ul class="list">
-                        <li>
-                           <a href="#">project</a>
-                        </li>
-                        <li>
-                           <a href="#">love</a>
-                        </li>
-                        <li>
-                           <a href="#">technology</a>
-                        </li>
-                        <li>
-                           <a href="#">travel</a>
-                        </li>
-                        <li>
-                           <a href="#">restaurant</a>
-                        </li>
-                        <li>
-                           <a href="#">life style</a>
-                        </li>
-                        <li>
-                           <a href="#">design</a>
-                        </li>
-                        <li>
-                           <a href="#">illustration</a>
-                        </li>
-                     </ul>
-                  </aside>
-                  <aside class="single_sidebar_widget instagram_feeds">
-                     <h4 class="widget_title">Instagram Feeds</h4>
-                     <ul class="instagram_row flex-wrap">
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
-                           </a>
-                        </li>
-                     </ul>
-                  </aside>
-                  <aside class="single_sidebar_widget newsletter_widget">
-                     <h4 class="widget_title">Newsletter</h4>
-                     <form action="#">
-                        <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
-                     </form>
-                  </aside>
+                  
                </div>
             </div>
          </div>
