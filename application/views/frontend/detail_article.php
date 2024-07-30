@@ -16,13 +16,13 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
+                     <img class="img-fluid rounded" src="<?= base_url('assets/img/posts/'.$post->image);?>" alt="">
                   </div>
                   <div class="blog_details">
                      <h2><?= $post->title;?></h2>
                      <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="fa fa-user"></i> <?= $post->name;?></a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                        <li><a href="#"><i class="fa fa-comments"></i> <?= number_format($post->count_comments,0);?> Comments</a></li>
                      </ul>
                      <?= $post->article;?>
                   </div>

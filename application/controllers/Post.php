@@ -42,7 +42,7 @@ class Post extends MY_Controller
             $new_image = 'slides-3.jpg';
             if($upload_image){
                 $config['upload_path'] = './assets/img/posts/';
-                $config['allowed_types'] = 'gif|jpg|png|jpegfile|';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|';
                 $config['max_size']     = '2048';
                 $this->load->library('upload', $config);
                 if($this->upload->do_upload('image')){
@@ -87,7 +87,7 @@ class Post extends MY_Controller
             $new_image = 'default_profile.svg';
             if($upload_image){
                 $config['upload_path'] = './assets/img/posts/';
-                $config['allowed_types'] = 'gif|jpg|png|jpegfile|';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg|';
                 $config['max_size']     = '2048';
                 $this->load->library('upload', $config);
                 if($this->upload->do_upload('image')){
