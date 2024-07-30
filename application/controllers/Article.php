@@ -16,7 +16,11 @@ class Article extends MY_Controller
 
     public function detail($slug = null) {
         if(!is_null($slug)) {
-            $this->vars['article'] = $this->m_post->getArticle(1,0,['slug' => $slug])->row();
+            $article = $this->m_post->getArticle(1,0,['slug' => $slug])->row();
+            $this->vars['post'] = $article;
+            $this->vars['post']->author = $this->db->get_where('users',['id' => $article->user_id])->row();
+            $this->vars['prev_post'] = $this->m_post->getPrevArticle($article->id)->row();
+            $this->vars['next_post'] = $this->m_post->getNextArticle($article->id)->row();
             $this->load->view('/frontend/detail_article', $this->vars);
         } else {
             show_404();

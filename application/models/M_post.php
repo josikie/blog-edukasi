@@ -12,6 +12,22 @@ class M_post extends CI_Model
         return $this->db->limit($limit,$offset)->get();
     }
 
+    public function getPrevArticle($id) {
+        $this->db->select('posts.*,category.name')
+            ->from('posts')
+            ->join('category','category.id=posts.category_id','left')
+            ->where('posts.id <', $id);
+        return $this->db->get();
+    }
+
+    public function getNextArticle($id) {
+        $this->db->select('posts.*,category.name')
+            ->from('posts')
+            ->join('category','category.id=posts.category_id','left')
+            ->where('posts.id >', $id);
+        return $this->db->get();
+    }
+
     public function insert($id, $data) {
         return $this->db->insert('posts',$data);
     }

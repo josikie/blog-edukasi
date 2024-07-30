@@ -55,7 +55,7 @@ class Post extends MY_Controller
 			$data = [
 				'title' => htmlspecialchars($this->input->post('title', true)),
                 'slug' => url_title($this->input->post('title'), '-', true),
-				'article' => htmlspecialchars($this->input->post('article', true)),
+				'article' => $this->input->post('article'),
 				'image' => $new_image,
 				'date'  => date('Y-m-d'),
                 'user_id' => $data['user']['id'],
@@ -99,7 +99,7 @@ class Post extends MY_Controller
 			$store = [
 				'title' => htmlspecialchars($this->input->post('title', true)),
                 'slug' => url_title($this->input->post('title'), '-', true),
-				'article' => htmlspecialchars($this->input->post('article', true)),
+				'article' => $this->input->post('article'),
 				'image' => $new_image,
 				'date'  => date('Y-m-d'),
                 'approval' => $data['user']['posts']['approval'],

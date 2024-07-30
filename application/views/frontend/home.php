@@ -57,7 +57,7 @@
                                 <?php } ?>
                                 <div class="trend-top-cap">
                                     <span><?= $trending_top->name;?></span>
-                                    <h2><a href="<?= base_url('article/detail/'. $trending_top->slug);?>"><?= $trending_top->title;?></a></h2>
+                                    <h2><a href="<?= base_url('article/'. $trending_top->slug);?>"><?= $trending_top->title;?></a></h2>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1"><?=$item_bottom->name;?></span>
-                                            <h4><a href="<?= base_url('article/detail/'. $item_bottom->slug);?>"><?=$item_bottom->title;?></a></h4>
+                                            <h4><a href="<?= base_url('article/'. $item_bottom->slug);?>"><?=$item_bottom->title;?></a></h4>
                                         </div>
                                     </div>
                                 </div>
