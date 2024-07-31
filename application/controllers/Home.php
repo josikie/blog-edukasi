@@ -36,5 +36,7 @@ class Home extends MY_Controller
     
         $this->load->view('frontend/category', $this->vars);
     }
-    
+    public function about() {
+        $this->load->view('frontend/about', $this->vars);
+    }
 }

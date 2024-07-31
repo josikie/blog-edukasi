@@ -55,7 +55,7 @@
                                             <li><a href="<?= base_url('home');?>">Home</a></li>
                                             <li><a href="<?= base_url('category');?>">Category</a></li>
                                             <li><a href="<?= base_url('home/latest_news');?>">Latest News</a></li>
-                                            <li><a href="<?= base_url('contact');?>">Contact</a></li>
+                                            <li><a href="<?= base_url('about');?>">Our Team</a></li>
                                         </ul>
                                     </nav>
                                 </div>
