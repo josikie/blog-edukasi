@@ -33,8 +33,8 @@
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <div class="whats-news-caption">
                                     <div class="row">
-                                        <?php if (!empty($articles)): ?>
-                                            <?php foreach ($articles as $article): ?>
+                                        <?php if (!empty($articles)) : ?>
+                                            <?php foreach ($articles as $article) : ?>
                                                 <div class="col-lg-3 col-md-4 mb-4">
                                                     <div class="single-what-news mb-100">
                                                         <div class="what-img">
@@ -42,24 +42,24 @@
                                                         </div>
                                                         <div class="what-cap">
                                                             <span class="color1"><?= $article->name ?></span>
-                                                            <h4><a href="#"><?= $article->title ?></a></h4>
+                                                            <h4><a href="<?= base_url('article/' . $article->slug); ?>"><?= $article->title ?></a></h4>
                                                         </div>
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
-                                        <?php else: ?>
+                                        <?php else : ?>
                                             <p>No articles found.</p>
                                         <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
                             <!-- Category Tabs -->
-                            <?php foreach ($categories as $category): ?>
+                            <?php foreach ($categories as $category) : ?>
                                 <div class="tab-pane fade" id="nav-<?= $category->id ?>" role="tabpanel" aria-labelledby="nav-<?= $category->id ?>-tab">
                                     <div class="whats-news-caption">
                                         <div class="row">
-                                            <?php foreach ($articles as $article): ?>
-                                                <?php if ($article->category_id == $category->id): ?>
+                                            <?php foreach ($articles as $article) : ?>
+                                                <?php if ($article->category_id == $category->id) : ?>
                                                     <div class="col-lg-3 col-md-4 mb-4">
                                                         <div class="single-what-news mb-100">
                                                             <div class="what-img">
@@ -67,7 +67,7 @@
                                                             </div>
                                                             <div class="what-cap">
                                                                 <span class="color1"><?= $article->name ?></span>
-                                                                <h4><a href="#"><?= $article->title ?></a></h4>
+                                                                <h4><a href="<?= base_url('article/' . $article->slug); ?>"><?= $article->title ?></a></h4>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -90,4 +90,5 @@
     <?php $this->load->view('frontend/includes/js'); ?>
 
 </body>
+
 </html>
