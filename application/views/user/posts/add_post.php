@@ -23,7 +23,7 @@
       <div class="col-md-8 col-lg-9">
         <div class="pt-2">
           <div class="mb-3">
-            <input class="btn btn-primary btn-sm" type="file" id="image" name="image" for="image">
+          <input type="file" name="image" id="image" required>
           </div>
         </div>
       </div>

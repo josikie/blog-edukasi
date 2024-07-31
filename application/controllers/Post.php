@@ -28,46 +28,53 @@ class Post extends MY_Controller
 
     // new posts
     public function add_post() {
-        $data['user'] = $this->db->get_where('users', ['email' 
-        => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('users', ['email' => $this->session->userdata('email')])->row_array();
         $data['role'] = "User";
         $data['categories'] = $this->db->order_by('name','asc')->get('category')->result();
-		$this->form_validation->set_rules('title', 'Title', 'required|trim');
-		$this->form_validation->set_rules('article', 'Article');
-
-		if($this->form_validation->run() == false){
-			$this->load->view('user/posts/add_post', $data);
-		} else{
+        
+        $this->form_validation->set_rules('title', 'Title', 'required|trim');
+        $this->form_validation->set_rules('article', 'Article');
+    
+        if($this->form_validation->run() == false){
+            $this->load->view('user/posts/add_post', $data);
+        } else {
             $upload_image = $_FILES['image']['name'];
-            $new_image = 'slides-3.jpg';
-            if($upload_image){
+            $new_image = 'default.jpg'; // Default image name if no image is uploaded
+    
+            if($upload_image) {
                 $config['upload_path'] = './assets/img/posts/';
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|';
-                $config['max_size']     = '2048';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size']     = '2048'; // 2MB
+                $config['encrypt_name'] = TRUE; // Encrypt file name to prevent duplicates
+    
                 $this->load->library('upload', $config);
-                if($this->upload->do_upload('image')){
+    
+                if($this->upload->do_upload('image')) {
                     $new_image = $this->upload->data('file_name');
-                    // $this->db->set('image', $new_image);
-                }else{
+                } else {
                     echo $this->upload->display_errors();
+                    return;
                 }
             }
-			$data = [
-				'title' => htmlspecialchars($this->input->post('title', true)),
+    
+            $data = [
+                'title' => htmlspecialchars($this->input->post('title', true)),
                 'slug' => url_title($this->input->post('title'), '-', true),
-				'article' => $this->input->post('article'),
-				'image' => $new_image,
-				'date'  => date('Y-m-d'),
+                'article' => $this->input->post('article'),
+                'image' => $new_image,
+                'date'  => date('Y-m-d'),
                 'user_id' => $data['user']['id'],
                 'approval' => 2,
                 'category_id' => htmlspecialchars($this->input->post('category', true))
-			];
-			// insert user
-			$this->db->insert('posts', $data);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Article Created.</div>');
-			redirect('post');
-		}
+            ];
+    
+            // Insert post data
+            $this->db->insert('posts', $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Article Created.</div>');
+            redirect('post');
+        }
     }
+    
 
     //edit
     public function edit_post($id) {
