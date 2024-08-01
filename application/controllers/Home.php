@@ -30,10 +30,6 @@ class Home extends MY_Controller
             $where['posts.category_id'] = $category_id;
         }
         $this->vars['articles'] = $this->m_post->getArticle(10, 0, $where)->result();
-        $this->vars['trending_top'] = $this->m_post->getArticle(1, 0, $where)->row();
-        $this->vars['trending_bottom'] = $this->m_post->getArticle(3, 1, $where)->result();
-        $this->vars['trending_right'] = $this->m_post->getArticle(5, 4, $where)->result();
-    
         $this->load->view('frontend/category', $this->vars);
     }
     public function about() {
