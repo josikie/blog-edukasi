@@ -24,33 +24,33 @@
         <section>
             <div class="card-top">
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=11" alt="Alexandra Smith">
-                    <h2>Josie Kie Nababan</h2>
+                    <img src="<?= base_url('assets/img/'); ?>josie.jpg" alt="Josie">
+                    <h2>Josi Kie Nababan</h2>
                     <p>Instruktor And Backend Developer</p>
                 </div>
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="John Smith">
+                    <img src="<?= base_url('assets/img/'); ?>profile.JPG" alt="Sutrisno">
                     <h2>Sutrisno Adi</h2>
                     <p>Instruktor And Frontend Developer</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Erik Longman">
+                <img src="<?= base_url('assets/img/'); ?>lingga.jpg" alt="Lingga">
                 <h2>Lingga Satria BS</h2>
                 <p>Ketua</p>
             </div>
             <div class="card">
-                <img src="https://images.pexels.com/photos/2216607/pexels-photo-2216607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Matthew Foster">
+            <img src="<?= base_url('assets/img/'); ?>cheli.jpg" alt="Arsela libana">
                 <h2>Arsela Libana</h2>
                 <p>Programmer</p>
             </div>
             <div class="card">
-                <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Artur Dichter">
-                <h2>Tri Agus Rullianto</h2>
+                <img src="<?= base_url('assets/img/'); ?>tri.jpg" alt="Lingga">
+                <h2>Tri Agus Rulianto</h2>
                 <p>Programmer</p>
             </div>
             <div class="card">
-                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Oliver Rohlsson">
+                <img src="<?= base_url('assets/img/'); ?>wildanu.jpg" alt="Wildanu">
                 <h2>Ahmad Wildanu Wahyu Ramadhan</h2>
                 <p>Programmer</p>
             </div>
