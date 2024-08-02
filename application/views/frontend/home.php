@@ -131,56 +131,21 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="weekly2-news-active dot-style d-flex dot-style">
+                            <?php
+                            if(!empty($top_article)){
+                                foreach($top_article as $toparticle) {
+                            ?>
                             <div class="weekly2-single">
                                 <div class="weekly2-img">
-                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News1.jpg" alt="">
+                                    <img src="<?= base_url('assets/img/posts/'. $toparticle->image);?>" type="date" alt="">
                                 </div>
                                 <div class="weekly2-caption">
-                                    <span class="color1">Corporate</span>
-                                    <p>25 Jan 2020</p>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div> 
-                            <div class="weekly2-single">
-                                <div class="weekly2-img">
-                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News2.jpg" alt="">
-                                </div>
-                                <div class="weekly2-caption">
-                                    <span class="color1">Event night</span>
-                                    <p>25 Jan 2020</p>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div> 
-                            <div class="weekly2-single">
-                                <div class="weekly2-img">
-                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News3.jpg" alt="">
-                                </div>
-                                <div class="weekly2-caption">
-                                    <span class="color1">Corporate</span>
-                                    <p>25 Jan 2020</p>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
+                                    <span class="color1"><?= $toparticle->name;?></span>
+                                    <p><?= date('d F Y');?></p>
+                                    <h4><a href="<?= base_url('article/'.$toparticle->slug);?>"><?= $toparticle->title;?></a></h4>;
                                 </div>
                             </div>
-                             <div class="weekly2-single">
-                                <div class="weekly2-img">
-                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News4.jpg" alt="">
-                                </div>
-                                <div class="weekly2-caption">
-                                    <span class="color1">Event time</span>
-                                    <p>25 Jan 2020</p>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div> 
-                             <div class="weekly2-single">
-                                <div class="weekly2-img">
-                                    <img src="<?= base_url('assets/frontend');?>/img/news/weekly2News4.jpg" alt="">
-                                </div>
-                                <div class="weekly2-caption">
-                                    <span class="color1">Corporate</span>
-                                    <p>25 Jan 2020</p>
-                                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                </div>
-                            </div> 
+                            <?php } } ?>
                         </div>
                     </div>
                 </div>
@@ -189,6 +154,8 @@
     </div>           
     <!-- End Weekly-News -->
     <!-- Start Youtube -->
+    <?php
+    /*
     <div class="youtube-area video-padding">
         <div class="container">
             <div class="row">
@@ -265,6 +232,9 @@
             </div>
         </div>
     </div> 
+    */
+    ?>
+    
     <!-- End Start youtube -->
     
     </main>

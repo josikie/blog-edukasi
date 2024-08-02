@@ -12,6 +12,16 @@ class M_post extends CI_Model
         return $this->db->limit($limit,$offset)->get();
     }
 
+    public function getTopArticle($limit,$where) {
+        $this->db->select('posts.*,category.name')
+            ->from('posts')
+            ->join('category','category.id=posts.category_id','left');
+            if(!empty($where))
+            $this->db->where($where);
+        $this->db->order_by('viewer','DESC');
+        return $this->db->limit($limit)->get();
+    }
+
     public function getPrevArticle($id) {
         $this->db->select('posts.*,category.name')
             ->from('posts')
@@ -50,7 +60,28 @@ class M_post extends CI_Model
             $this->db->order_by('posts.date','desc');
         return $this->db->get();
     }
-    
+
+    public function updateViewer($id) {
+        $sql = "UPDATE posts SET viewer=viewer+1 WHERE id=?";
+        $this->db->query($sql, [$id]);
+    }
+
+    public function get_count() {
+        return $this->db->count_all("posts");
+    }
+
+    public function fetch_data($limit, $start) {
+        $this->db->select('posts.*,category.name')
+        ->from('posts')
+        ->join('category','category.id=posts.category_id','left');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        }
+        return false;
+    }
 
     public function insert($id, $data) {
         return $this->db->insert('posts',$data);
