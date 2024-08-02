@@ -267,8 +267,8 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">Perkenalkan</h4>
+                                        <p class="card-text">Halo! Saya Ahmad Wildanu Wahyu Ramadhan, seorang Mahasiswa Dari Universitas Siber Asia dengan minat besar dalam Belajar Pemrograman Web. dan saya selalu bersemangat untuk belajar hal baru serta berbagi pengetahuan. Selamat datang di website Kami, tempat di mana Kita Bisa berbagi Materi. Terima kasih telah berkunjung!</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
