@@ -63,11 +63,11 @@
                                                     <div class="col-lg-3 col-md-4 mb-4">
                                                         <div class="single-what-news mb-100">
                                                             <div class="what-img">
-                                                                <img style="width: 200px;" src="<?= base_url('assets/img/posts/') . $article->image ?>" alt="">
+                                                                <img style="height: 200px;" src="<?= base_url('assets/img/posts/') . $article->image ?>" alt="">
                                                             </div>
                                                             <div class="what-cap">
                                                                 <span class="color1"><?= $article->name ?></span>
-                                                                <h4><a href="<?= base_url('article/' . $article->slug); ?>"><?= $article->title ?></a></h4>
+                                                                <h5><a href="<?= base_url('article/' . $article->slug); ?>"><?= $article->title ?></a></h5>
                                                             </div>
                                                         </div>
                                                     </div>
