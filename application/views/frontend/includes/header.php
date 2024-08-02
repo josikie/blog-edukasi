@@ -1,3 +1,4 @@
+<?php $this->load->view('admin/includes/head-admin'); ?>
 <header>
         <!-- Header Start -->
        <div class="header-area">
@@ -8,8 +9,8 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
                                     <ul>     
-                                        <li><img src="assets/img/icon/header_icon1.png" alt="">34ºc, Sunny </li>
-                                        <li><img src="assets/img/icon/header_icon1.png" alt=""><?= date('l, d F, Y');?></li>
+                                        <li>34ºc, Sunny </li>
+                                        <li><?= date('l, d F, Y');?></li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
@@ -23,33 +24,16 @@
                        </div>
                    </div>
                 </div>
-                <div class="header-mid d-none d-md-block">
-                   <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-3 col-lg-3 col-md-3">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="header-banner f-right ">
-                                    <img src="assets/img/hero/header_card.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-                </div>
                <div class="header-bottom header-sticky">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
                                 <!-- sticky -->
                                     <div class="sticky-logo">
-                                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                        <a href="home"><img src="<?= base_url('assets/img'); ?>/logoku.png" alt="logo"></a>
                                     </div>
                                 <!-- Main-menu -->
-                                <div class="main-menu d-none d-md-block">
+                                <div class="main-menu d-none d-md-block d-flex">
                                     <nav>                  
                                         <ul id="navigation">    
                                             <li><a href="<?= base_url('home');?>">Home</a></li>
@@ -60,18 +44,11 @@
                                     </nav>
                                 </div>
                             </div>
-                            <a class="btn btn-primary btn-sm " href="<?= base_url('login');?>">Login</a>
-                            <!-- <div class="col-xl-2 col-lg-2 col-md-4">
+                            <div class="col-xl-2 col-lg-2 col-md-2">
                                 <div class="header-right-btn f-right d-none d-lg-block">
-                                    <i class="fas fa-search special-tag"></i>
-                                    <div class="search-box">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search">
-                                            
-                                        </form>
-                                    </div>
+                                    <a class="btn btn-primary btn-lg" href="<?= base_url('login');?>">Login</a>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- Mobile Menu -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-md-none"></div>
