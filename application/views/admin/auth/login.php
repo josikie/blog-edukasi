@@ -4,6 +4,7 @@
 <head>
   <?php $this->load->view('admin/includes/head-admin'); ?>
 </head>
+
 <body>
 
   <main>
@@ -15,8 +16,8 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
+                <a href="home" class="logo d-flex align-items-center w-auto">
+                  <img style="height: 100px;" src="assets/img/Olog.png" alt="">
                 </a>
               </div><!-- End Logo -->
 
@@ -25,8 +26,8 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                  <a href="index.html" class="logo d-flex align-items-center w-auto">
-                </a>
+                    <a href="index.html" class="logo d-flex align-items-center w-auto">
+                    </a>
                     <h5 class="card-title text-center pb-0 fs-4">Login</h5>
                   </div>
 
