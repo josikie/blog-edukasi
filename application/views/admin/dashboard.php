@@ -51,7 +51,7 @@
                     <tr>
                         <th scope="row"><a href="#"><?= $dataPosts['id'] ?></a></th>
                         <td><?= $dataPosts['date'] ?></td>
-                        <td><a href="<?= base_url('detail_post/detail/' . $dataPosts['id']); ?>" class="text-primary"><?= $dataPosts['title'] ?></a></td>
+                        <td><a href="<?= base_url('article/' . $dataPosts['slug']); ?>" target="_blank" class="text-primary"><?= $dataPosts['title'] ?></a></td>
                         <?php if($dataPosts['approval'] == 1) : ?>
                           <td><span class="badge bg-success">Approved</span></td>
                         <?php elseif($dataPosts['approval'] == 2) : ?>
@@ -60,8 +60,8 @@
                           <td><span class="badge bg-danger">Rejected</span></td>
                         <?php endif; ?>
                         <td>
-                          <a href="<?= base_url('/admin_post/approved/'.$dataPosts['id']); ?>" class="btn btn-primary">Accept</a>
-                          <a href="<?= base_url('/admin_post/rejected/'.$dataPosts['id']); ?>" class="btn btn-danger">Reject</a>
+                          <a href="<?= base_url('/Admin_Post/approved/'.$dataPosts['id']); ?>" class="btn btn-primary">Accept</a>
+                          <a href="<?= base_url('/Admin_Post/rejected/'.$dataPosts['id']); ?>" class="btn btn-danger">Reject</a>
                         </td>
                     </tr>
                   <?php endforeach; ?>

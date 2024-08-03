@@ -9,6 +9,7 @@ class M_post extends CI_Model
             ->join('category','category.id=posts.category_id','left');
             if(!empty($where))
             $this->db->where($where);
+            $this->db->order_by('id', 'desc');
         return $this->db->limit($limit,$offset)->get();
     }
 
